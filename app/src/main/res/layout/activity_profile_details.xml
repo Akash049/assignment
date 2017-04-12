@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/MyAppbar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true">
+
+    <android.support.design.widget.CollapsingToolbarLayout
+        android:id="@+id/collapse_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        android:background="@color/material_deep_teal_500"
+        android:fitsSystemWindows="true">
+        <ImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:fitsSystemWindows="true"
+            android:background="@color/bluecolor"
+            app:layout_collapseMode="pin" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/MyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentScrim="@color/bluecolor"
+            app:layout_collapseMode="parallax" />
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+</android.support.design.widget.AppBarLayout>
+
+<android.support.v4.widget.NestedScrollView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#fff"
+android:layout_gravity="fill_vertical"
+app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:paddingTop="10dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp">
+        <TableRow
+            android:weightSum="6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/dob"
+                android:layout_width="0dp"
+                android:textSize="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/bluecolor"/>
+            <TextView
+                android:text="20/02/2017"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:textSize="20dp"
+                android:id="@+id/dobText"
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/bluecolor"/>
+        </TableRow>
+        <TableRow
+            android:weightSum="6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/status"
+                android:layout_width="0dp"
+                android:textSize="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/bluecolor"/>
+            <EditText
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:inputType="text"
+                android:textSize="20dp"
+                android:hint="This is my status"
+                android:textColorHint="@color/bluecolor"
+                android:visibility="visible"
+                android:id="@+id/statusField"
+                android:textColor="@color/bluecolor"/>
+        </TableRow>
+        <TableRow
+            android:weightSum="6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/contact"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:layout_weight="2"
+                android:textColor="@color/bluecolor"/>
+            <EditText
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:inputType="number"
+                android:maxLength="10"
+                android:textSize="20dp"
+                android:hint="8127005154"
+                android:textColorHint="@color/bluecolor"
+                android:visibility="visible"
+                android:id="@+id/contactField"
+                android:textColor="@color/bluecolor"/>
+        </TableRow>
+        <TableRow
+            android:weightSum="6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="@string/gender"
+                android:layout_width="0dp"
+                android:textSize="20dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/bluecolor"/>
+            <RadioGroup
+                android:gravity="center_vertical"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:orientation="horizontal"
+                android:id="@+id/genderSelect"
+                android:visibility="visible">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/bluecolor"
+                    android:buttonTint="@color/bluecolor"
+                    android:backgroundTint="@color/bluecolor"
+                    android:id="@+id/maleSelect"
+                    android:text="@string/male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/bluecolor"
+                    android:id="@+id/femaleSelect"
+                    android:buttonTint="@color/bluecolor"
+                    android:backgroundTint="@color/bluecolor"
+                    android:text="@string/female"/>
+            </RadioGroup>
+
+        </TableRow>
+    </TableLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/save"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="100dp"
+            android:text="Save Changes"
+            android:visibility="visible"
+            android:textColor="@color/white"
+            android:layout_marginRight="100dp"
+            android:background="@drawable/rounded_button"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/pg"/>
+    </FrameLayout>
+
+
+
+</LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
