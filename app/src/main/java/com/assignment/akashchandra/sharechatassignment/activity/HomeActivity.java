@@ -106,6 +106,7 @@ public class HomeActivity extends AppCompatActivity implements DownloadResultRec
                     startService(intent);
                 }else {
                     Toast.makeText(getApplicationContext(),"No Internet available",Toast.LENGTH_SHORT).show();
+                    swipeRefreshLayout.setRefreshing(false);
                 }
 
 
@@ -354,6 +355,8 @@ public class HomeActivity extends AppCompatActivity implements DownloadResultRec
                         startService(intent);
                     }else{
                         Toast.makeText(getApplicationContext(),"No Internet available",Toast.LENGTH_SHORT).show();
+                        holder.pg.setVisibility(View.GONE);
+                        holder.loadMore.setVisibility(View.VISIBLE);
                     }
 
                 }
